@@ -1,0 +1,21 @@
+.entity-wrapper {
+  padding-top: 20px;
+  max-width: 520px;
+  margin: auto;
+
+  .title-editor-wrapper {
+    textarea {
+      resize: none;
+      width: 100%;
+      font-size: 26px;
+      color: #fff;
+      font-weight: 700;
+      background: transparent;
+      overflow: hidden;
+      border: none !important;
+      outline: none !important;
+      padding: 0;
+      margin: 0;
+    }
+  }
+}

@@ -1,0 +1,26 @@
+<div class="title-editor-wrapper">
+  <!-- <textarea oninput="onInput"></textarea> -->
+  <textarea 
+    rows="1" id="<%= textareaId %>"
+    onkeyup="resizeTextarea(event)"  
+    class="auto-resize-textarea"
+    placeholder="Enter your title"
+  ></textarea>
+</div>
+
+
+<script>
+  function resizeTextarea(e) {
+    e.target.style.height = e.target.scrollHeight + "px";
+    
+    console.log('On input', e);
+  }
+
+  function calcHeight(value) {
+    console.log('Text value: ', value);
+    let numberOfLineBreaks = (value.match(/\n/g) || []).length;
+     // min-height + lines x line-height + padding + border
+    let newHeight = 20 + numberOfLineBreaks * 20 + 12 + 2;
+    return newHeight;
+  }
+</script>

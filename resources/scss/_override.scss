@@ -1,0 +1,27 @@
+#app-header {
+  .navbar {
+    height: 100%;
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+}
+
+#app-sidebar {
+  .nav-link {
+    font-size: 1rem;
+    color: $sidebar-text-color;
+    padding: 4px 6px 20xp;
+    border-radius: 6px;
+    font-weight: 500;
+
+    &:hover {
+      background-color: $sidebar-item__hover;
+      color: #fff;
+    }
+
+    &.active,
+    &:hover {
+      background-color: $sidebar-item__active__hover;
+    }
+  }
+}

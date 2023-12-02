@@ -1,0 +1,42 @@
+/* LAYOUT */
+#app-header {
+  height: $header-height;
+  background-color: $app-bg-color !important ;
+}
+
+#app-sidebar {
+  height: calc(100vh - #{$header-height}) !important;
+  width: $sidebar-width;
+  position: absolute;
+  left: 0;
+  top: $header-height;
+  background-color: $app-bg-color !important ;
+}
+
+#app-main {
+  width: 100%;
+  background-color: $app-bg-color !important ;
+  min-height: calc(100vh - #{$header-height}) !important;
+  height: calc(100vh - #{$header-height}) !important;
+  padding-left: $sidebar-width;
+
+  .app-body {
+    padding: 0 8px 8px;
+    height: 100%;
+    width: 100%;
+  }
+
+  .app-container {
+    border-radius: 12px;
+    padding: 6px 6px 0;
+    height: 100%;
+    width: 100%;
+    background-color: $app-main-bg-color;
+
+    .app-content {
+      width: 100%;
+      max-height: 100%;
+      overflow-y: scroll;
+    }
+  }
+}

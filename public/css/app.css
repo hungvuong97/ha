@@ -1,0 +1,79 @@
+* {
+  margin: 0px; }
+
+html {
+  font-size: 14px; }
+
+body {
+  font-size: 14px;
+  color: #d0d5dc;
+  margin: 0;
+  padding: 0; }
+
+#app-header .navbar {
+  height: 100%;
+  padding-top: 8px;
+  padding-bottom: 8px; }
+
+#app-sidebar .nav-link {
+  font-size: 1rem;
+  color: #949dad;
+  padding: 4px 6px 20xp;
+  border-radius: 6px;
+  font-weight: 500; }
+  #app-sidebar .nav-link:hover {
+    background-color: rgba(208, 213, 220, 0.65);
+    color: #fff; }
+  #app-sidebar .nav-link.active, #app-sidebar .nav-link:hover {
+    background-color: rgba(219, 235, 255, 0.085); }
+
+.entity-wrapper {
+  padding-top: 20px;
+  max-width: 520px;
+  margin: auto; }
+  .entity-wrapper .title-editor-wrapper textarea {
+    resize: none;
+    width: 100%;
+    font-size: 26px;
+    color: #fff;
+    font-weight: 700;
+    background: transparent;
+    overflow: hidden;
+    border: none !important;
+    outline: none !important;
+    padding: 0;
+    margin: 0; }
+
+/* LAYOUT */
+#app-header {
+  height: 52px;
+  background-color: #27313d !important; }
+
+#app-sidebar {
+  height: calc(100vh - 52px) !important;
+  width: 250px;
+  position: absolute;
+  left: 0;
+  top: 52px;
+  background-color: #27313d !important; }
+
+#app-main {
+  width: 100%;
+  background-color: #27313d !important;
+  min-height: calc(100vh - 52px) !important;
+  height: calc(100vh - 52px) !important;
+  padding-left: 250px; }
+  #app-main .app-body {
+    padding: 0 8px 8px;
+    height: 100%;
+    width: 100%; }
+  #app-main .app-container {
+    border-radius: 12px;
+    padding: 6px 6px 0;
+    height: 100%;
+    width: 100%;
+    background-color: #1e232d; }
+    #app-main .app-container .app-content {
+      width: 100%;
+      max-height: 100%;
+      overflow-y: scroll; }

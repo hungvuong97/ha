@@ -13,8 +13,8 @@
     <link rel="stylesheet" href="css/app.css" />
     <!-- <script src="https://cdn.tailwindcss.com"></script> -->
     <body>
-      <%- include('layout/header') %>
-      <%-include('layout/sidebar')%>
+      <%- include('../../layout/header') %>
+      <%-include('../../layout/sidebar')%>
       <main id="app-main">
         <div class="app-body">
           <div class="app-container">
@@ -23,13 +23,13 @@
                 <div class="entity-icon">Icon Picker In Here</div>
                 <div class="entity-title">
                   <div class="title-editor-wrapper">
-                    <%-include('./components/InputFields/TitleEditor', { textareaId: 1 })%>
+                    <%-include('../../components/InputFields/TitleEditor', { textareaId: 1 })%>
                  
                   </div>
                 </div>
                 <div class="entity-editor">
                   <div></div>
-                  <%-include('./components/InputFields/Editor.ejs', {
+                  <%-include('../../components/InputFields/Editor.ejs', {
                     editorId: 12
                   }) %>
                 </div>
@@ -38,7 +38,7 @@
           </div>
         </div>
       </main>
-      <%- include('layout/footer') %>
+      <%- include('../../layout/footer') %>
     </body>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"

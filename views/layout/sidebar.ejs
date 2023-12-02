@@ -1,0 +1,83 @@
+<% 
+  active = '/memory'
+  const sidebarItems = [
+    {
+      label: 'Memory',
+      link: '/memory'
+    },
+    {
+      label: 'Diary',
+      link: '/diary'
+    }
+  ]
+%>
+<!-- <svg
+data-v-561e858b=""
+xmlns="http://www.w3.org/2000/svg"
+viewBox="0 0 14 14"
+fill="currentColor"
+width="14"
+height="14"
+class="icon"
+data-v-193ff82c=""
+>
+<g>
+  <path
+    d="M11.25 11H5.75C5.28668 10.9974 4.84309 10.8122 4.51546 10.4845C4.18784 10.1569 4.00263 9.71332 4 9.25V1.75C4.00263 1.28668 4.18784 0.843085 4.51546 0.515464C4.84309 0.187842 5.28668 0.0026251 5.75 0H9.5C9.6884 0.00787236 9.86691 0.0864204 10 0.22L12.78 3C12.9136 3.13309 12.9921 3.3116 13 3.5V9.25C12.9974 9.71332 12.8122 10.1569 12.4845 10.4845C12.1569 10.8122 11.7133 10.9974 11.25 11Z"
+  ></path>
+  <path
+    d="M8.75,14h-6A1.76,1.76,0,0,1,1,12.25v-8a.75.75,0,0,1,1.5,0v8a.25.25,0,0,0,.25.25h6a.75.75,0,0,1,0,1.5Z"
+  ></path>
+</g>
+</svg> -->
+
+<div id="app-sidebar" class="d-flex flex-column flex-shrink-0 p-3 text-white">
+  <ul class="nav nav-pills flex-column mb-auto">
+    <!-- <li class="nav-item">
+      <a href="#" class="nav-link <%= active === '/memory' ? 'active' : '' %>">
+        Memory
+      </a>
+    </li>
+    <li class="nav-item">
+      <a href="#" class="nav-link">
+        Diary
+      </a>
+    </li> -->
+    <% for (let item of sidebarItems) { %>
+      <li class="nav-item">
+          <a href="<%= item.link %>" class="nav-link <%= active === item.link ? 'active' : '' %>">
+              <%= item.label %>
+          </a>
+      </li>
+    <% } %>
+  </ul>
+  <hr />
+  <div class="dropdown">
+    <a
+      href="#"
+      class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
+      id="dropdownUser1"
+      data-bs-toggle="dropdown"
+      aria-expanded="false"
+    >
+      <img
+        src="https://github.com/mdo.png"
+        alt=""
+        width="32"
+        height="32"
+        class="rounded-circle me-2"
+      />
+      <strong>mdo</strong>
+    </a>
+    <ul
+      class="dropdown-menu dropdown-menu-dark text-small shadow"
+      aria-labelledby="dropdownUser1"
+    >
+      <li><a class="dropdown-item" href="#">New project...</a></li>
+      <li><a class="dropdown-item" href="#">Settings</a></li>
+      <li><a class="dropdown-item" href="#">Profile</a></li>
+      <li><hr class="dropdown-divider" /></li>
+      <li><a class="dropdown-item" href="#">Sign out</a></li>
+    </ul>
+  </div>
+</div>
