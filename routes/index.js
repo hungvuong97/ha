@@ -96,7 +96,23 @@ router.get('/register', function (request, response, next) {
 });
 
 router.get('/memory', function (request, response, next) {
+  response.render('pages/memory/view', { activeLink: '/memory' });
+});
+
+router.get('/memory/add', function (request, response, next) {
   response.render('pages/memory/add', { activeLink: '/memory' });
+});
+
+router.get('/memory/edit/:id', function (request, response, next) {
+  response.render('pages/memory/edit', {
+    activeLink: '/memory',
+    data: {}, // - Memory data
+  });
+});
+
+router.post('/test', function (request, response, next) {
+  console.log('REQUEST BODY::', request.body);
+  response.send(request.body);
 });
 
 router.post('/memory', async function (request, response, next) {

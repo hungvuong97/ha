@@ -1,0 +1,32 @@
+<!-- 
+  PROPS:
+  - name
+  - id
+  - value
+  - enableTime: boolean
+-->
+
+<div class="date-picker-wrapper">
+  <i class="fa-regular fa-calendar"></i>
+  <input 
+    type="text"
+    class="date-picker <%= typeof enableTime != 'undefined' ? 'date-time' : '' %>"
+    name="<%= typeof name != 'undefined' ? name : '' %>"
+    id="<%= typeof id != 'undefined' ? id : '' %>"
+    value="<%= typeof value != 'undefined' ? value : '' %>"
+  >
+  </input>
+</div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/dark.css">
+
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+<% var enableTime = typeof enableTime != 'undefined' ? true : false %>
+<script>
+  const isEnableTime = '<%=enableTime%>'
+
+  flatpickr(".date-picker-wrapper .date-picker", {
+    enableTime: isEnableTime
+  });
+</script>

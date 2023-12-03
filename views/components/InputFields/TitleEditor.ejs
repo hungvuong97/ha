@@ -1,7 +1,9 @@
 <div class="title-editor-wrapper">
   <!-- <textarea oninput="onInput"></textarea> -->
   <textarea 
-    rows="1" id="<%= textareaId %>"
+    rows="1" 
+    id="<%= typeof id != 'undefined' ? id : '' %>"
+    name="<%= typeof name != 'undefined' ? name : '' %>"
     onkeyup="resizeTextarea(event)"  
     class="auto-resize-textarea"
     placeholder="Enter your title"

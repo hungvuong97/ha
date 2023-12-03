@@ -1,7 +1,8 @@
 <div id="editorjs">
-  <div class="ce-example__button" id="saveButton">
+  <input type="hidden" name="editor_content" class="editorContent">
+  <!-- <div class="ce-example__button" id="saveButton">
     editor.save()
-  </div>
+  </div> -->
 </div>
 <script src="https://cdn.jsdelivr.net/npm/@editorjs/editorjs@latest"></script>
 <script src="https://cdn.jsdelivr.net/npm/@editorjs/header@latest"></script><!-- Header -->
@@ -21,7 +22,7 @@
     /**
      * Saving button
      */
-     const saveButton = document.getElementById('saveButton');
+    //  const saveButton = document.getElementById('saveButton');
     /**
      * To initialize the Editor, create a new instance with configuration object
      * @see docs/installation.md for mode details
@@ -200,18 +201,39 @@
         ]
       },
       onReady: function(){
-        saveButton.click();
+        // saveButton.click();
       },
-      onChange: function() {
-        console.log('something changed');
+      onChange: function(api, event) {
+        console.log('something changed', api);
+        api.saver.save().then(outputData => {
+          console.log('Article data:', outputData)
+        }).catch(err => {
+          console.log('Saving failed', error);
+        })
       }
     });
     /**
      * Saving example
      */
-    saveButton.addEventListener('click', function () {
-      editor.save().then((savedData) => {
-        cPreview.show(savedData, document.getElementById("output"));
-      });
-    });
+    // saveButton.addEventListener('click', function () {
+    //   editor.save().then((savedData) => {
+    //     cPreview.show(savedData, document.getElementById("output"));
+    //   });
+    // });
+    
+    document.addEventListener('DOMContentLoaded', () => {
+      const btnSubmit = document.querySelector('form#app-form button[type="submit"]');
+      console.log(document.querySelector('form#app-form button[type="submit"]'));
+      btnSubmit.addEventListener('click', async function(e) {
+        e.preventDefault();
+        const content = await editor.save();
+        console.log('Editor data::', content)
+        
+        document.querySelector('#editorjs .editorContent').value= JSON.stringify(content);
+  
+        // this.submit();
+        document.querySelector('form#app-form').submit();
+      })
+    })
+
 </script>

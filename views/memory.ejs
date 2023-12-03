@@ -20,18 +20,22 @@
           <div class="app-container">
             <div class="app-content">
               <div class="entity-wrapper">
-                <div class="entity-icon">Icon Picker In Here</div>
-                <div class="entity-title">
-                  <div class="title-editor-wrapper">
-                    <%-include('./components/InputFields/TitleEditor', { textareaId: 1 })%>
-                 
+                <div class="entity-content">
+                  <div class="entity-icon">Icon Picker In Here</div>
+                  <div class="entity-title">
+                    <div class="title-editor-wrapper">
+                      <%-include('./components/InputFields/TitleEditor', { textareaId: 1 })%>
+                    </div>
                   </div>
-                </div>
-                <div class="entity-editor">
-                  <div></div>
-                  <%-include('./components/InputFields/Editor.ejs', {
-                    editorId: 12
-                  }) %>
+                  <div class="entity-controls">
+                  
+                  </div>
+                  <div class="entity-editor">
+                    <div></div>
+                    <%-include('./components/InputFields/Editor.ejs', {
+                      editorId: 12
+                    }) %>
+                  </div>
                 </div>
               </div>
             </div>

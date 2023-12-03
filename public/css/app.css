@@ -29,20 +29,118 @@ body {
 
 .entity-wrapper {
   padding-top: 20px;
-  max-width: 520px;
-  margin: auto; }
-  .entity-wrapper .title-editor-wrapper textarea {
-    resize: none;
-    width: 100%;
-    font-size: 26px;
+  padding-bottom: 10px;
+  margin: auto;
+  display: flex;
+  flex-direction: column; }
+  .entity-wrapper .entity-content {
+    max-width: 520px; }
+    .entity-wrapper .entity-content .title-editor-wrapper textarea {
+      resize: none;
+      width: 100%;
+      font-size: 26px;
+      color: #fff;
+      font-weight: 700;
+      background: transparent;
+      overflow: hidden;
+      border: none !important;
+      outline: none !important;
+      padding: 0;
+      margin: 0; }
+
+.page {
+  padding: 20px; }
+  .page .page-header {
     color: #fff;
-    font-weight: 700;
-    background: transparent;
-    overflow: hidden;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #2e3643;
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+    .page .page-header .page-title {
+      color: #fff;
+      font-size: 32px; }
+
+.document-list {
+  display: flex;
+  flex-direction: column; }
+  .document-list .document-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px 10px;
+    border-radius: 6px;
+    width: 100%;
+    text-decoration: none;
+    color: #b2b9c4;
+    line-height: 24px; }
+    .document-list .document-item:hover {
+      background-color: #262d39; }
+      .document-list .document-item:hover .title {
+        color: #fff !important; }
+    .document-list .document-item .document-title {
+      flex: 1;
+      margin-right: 10px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      text-wrap: nowrap; }
+      .document-list .document-item .document-title .title {
+        color: #b2b9c4;
+        font-weight: 500;
+        font-size: 14px; }
+    .document-list .document-item .document-date {
+      flex: 0 0 120px;
+      width: 120px;
+      font-size: 13px;
+      color: #677589; }
+
+.date-picker-wrapper {
+  background-color: rgba(103, 117, 137, 0.16);
+  border-radius: 8px;
+  height: 28px;
+  width: fit-content;
+  padding-left: 8px;
+  padding-right: 8px;
+  display: flex;
+  align-items: center; }
+  .date-picker-wrapper i {
+    margin-right: 6px; }
+  .date-picker-wrapper .date-picker {
+    color: #d0d5dc;
+    flex: 1;
+    width: 100%;
+    width: 76px;
+    background-color: transparent;
     border: none !important;
-    outline: none !important;
-    padding: 0;
-    margin: 0; }
+    outline: none !important; }
+    .date-picker-wrapper .date-picker.date-time {
+      width: 116px; }
+
+button.add-new {
+  color: #fff;
+  background-color: #495362;
+  border-radius: 6px;
+  padding: 4px 10px; }
+  button.add-new:hover {
+    background-color: #586170; }
+
+/* width */
+::-webkit-scrollbar {
+  width: 6px; }
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #1e232d; }
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #27313d;
+  border-radius: 10px; }
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #424c58; }
 
 /* LAYOUT */
 #app-header {
@@ -75,5 +173,22 @@ body {
     background-color: #1e232d; }
     #app-main .app-container .app-content {
       width: 100%;
+      height: 100%;
       max-height: 100%;
-      overflow-y: scroll; }
+      overflow-y: auto;
+      overflow-x: hidden; }
+      #app-main .app-container .app-content .entity-wrapper {
+        height: 100%; }
+        #app-main .app-container .app-content .entity-wrapper .entity-container {
+          height: 100%;
+          overflow-y: scroll; }
+          #app-main .app-container .app-content .entity-wrapper .entity-container .entity-content {
+            margin: auto;
+            max-width: 520px; }
+          #app-main .app-container .app-content .entity-wrapper .entity-container .entity-controls {
+            padding: 10px 0;
+            border-top: 1px solid #2e3643;
+            border-bottom: 1px solid #2e3643; }
+        #app-main .app-container .app-content .entity-wrapper .entity-actions {
+          text-align: end;
+          padding: 10px 8px 0; }
