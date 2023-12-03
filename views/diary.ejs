@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <!-- <link rel="stylesheet" href="css/style.css" /> -->
+    <link rel="stylesheet" href="css/app.css" />
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <body>
+      <%- include('layout/header') %>
+      <%-include('layout/sidebar')%>
+      <main id="app-main">
+        <div class="app-body">
+          <div class="app-container">
+            <div class="app-content">
+              <div class="entity-wrapper">
+                <div class="entity-content">
+                  <div class="entity-icon">Title</div>
+                  <div class="entity-title">
+                    <div class="title-editor-wrapper">
+                      <%-include('./components/InputFields/TitleEditor', { textareaId: 1 })%>
+                    </div>
+                  </div>
+                  <div class="entity-controls">
+                  
+                  </div>
+                  <div class="entity-editor">
+                    <div></div>
+                    <%-include('./components/InputFields/Editor.ejs', {
+                      editorId: 12
+                    }) %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <%- include('layout/footer') %>
+    </body>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+</html>

@@ -20,14 +20,14 @@
         <div class="app-body">
           <div class="app-container">
             <div class="app-content">
-              <form id="app-form" action="/update_memory/<%= data.id %>" method="post" class="entity-wrapper">
+              <form id="app-form" action="/add_diary" method="post" class="entity-wrapper">
                 <!-- <form id="app-form" action="/test" method="post"> -->
                   <div class="entity-container">
                     <div class="entity-content">
                       <div class="entity-icon">Title</div>
                       <div class="entity-title">
                         <div class="title-editor-wrapper">
-                          <%-include('../../components/InputFields/TitleEditor', { id: 'title', name: 'title', value: data.title })%>
+                          <%-include('../../components/InputFields/TitleEditor', { id: 'title', name: 'title' })%>
                         </div>
                       </div>
                       <div class="entity-controls">
@@ -35,24 +35,14 @@
                           enableTime: true,
                           id: 'date_time',
                           name: 'date_time',
-                          value: data.date_time
                         })%>
                       </div>
                       <div class="entity-editor">
                         <div></div>
-                        <% var contentData = JSON.stringify(data?.contentData) %>
                         <%-include('../../components/InputFields/Editor.ejs', {
-                          editorId: data.editor_content,
-                          contentData: contentData
+                          editorId: 12,
+                          contentData: null
                         }) %>
-                      </div>
-                      <div class="entity-score">
-                        <div></div>
-                        <div class="entity-icon">Rate</div>
-                        <div>
-                          <label for="score">Enter Score:</label>
-                          <input type="number" id="score" name="score" min="0" max="10" step="1" placeholder="0" value="<%= data.score %>">
-                      </div>
                       </div>
                     </div>
                   </div>

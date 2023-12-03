@@ -20,9 +20,6 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,N
 CREATE SCHEMA IF NOT EXISTS `ha` ;
 USE `ha` ;
 
--- -----------------------------------------------------
--- Table `ha`.`user_login`
--- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `ha`.`user_login` (
   `user_id` INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
   `user_email` VARCHAR(100) NOT NULL,
@@ -40,10 +37,11 @@ AUTO_INCREMENT = 6;
 CREATE TABLE IF NOT EXISTS `ha`.`user_post` (
   `id` INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
   `date` DATETIME NULL DEFAULT NULL,
-  `content` VARCHAR(255) NULL DEFAULT NULL,
+  `content` TEXT NULL DEFAULT NULL,
   `type` INT(11) NULL DEFAULT NULL,
   `score` INT(11) NULL DEFAULT NULL,
   `user_id` INT(11) UNSIGNED NOT NULL,
+  `title` VARCHAR(255) NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE,
   CONSTRAINT `fk_user_post_1`

@@ -15,7 +15,7 @@ app.use(
   session({
     secret: 'webslesson',
     resave: true,
-    saveUninitialized: false,
+    saveUninitialized: true,
   }),
 );
 

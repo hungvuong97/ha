@@ -24,13 +24,13 @@
                 <div class="page-header">
                   <h2 class="page-title">Memory</h2>
                   <div>
-                    <button class="add-new" onclick="window.location.href='/memory/add'">Add New</button>
+                    <button class="add-new" onclick="window.location.href='/diary/add'">Add New</button>
                   </div>
                 </div>
                 <div class="page-content">
                   <div class="document-list">
                     <% for (let item of data) { %>
-                      <a href="/memory/edit/<%= item.id %>" class="document-item">
+                      <a href="/diary/edit/<%= item.id %>" class="document-item">
                         <div class="document-title">
                           <span class="title"><%= item.title %></span>
                         </div>

@@ -20,11 +20,11 @@
         <div class="app-body">
           <div class="app-container">
             <div class="app-content">
-              <form id="app-form" action="/test" method="post" class="entity-wrapper">
+              <form id="app-form" action="/add_memory" method="post" class="entity-wrapper">
                 <!-- <form id="app-form" action="/test" method="post"> -->
                   <div class="entity-container">
                     <div class="entity-content">
-                      <div class="entity-icon">Icon Picker In Here</div>
+                      <div class="entity-icon">Title</div>
                       <div class="entity-title">
                         <div class="title-editor-wrapper">
                           <%-include('../../components/InputFields/TitleEditor', { id: 'title', name: 'title' })%>
@@ -40,8 +40,17 @@
                       <div class="entity-editor">
                         <div></div>
                         <%-include('../../components/InputFields/Editor.ejs', {
-                          editorId: 12
+                          editorId: 12,
+                          contentData: null
                         }) %>
+                      </div>
+                      <div class="entity-score">
+                        <div></div>
+                        <div class="entity-icon">Rate</div>
+                        <div>
+                          <label for="score">Enter Score:</label>
+                          <input type="number" id="score" name="score" min="0" max="10" step="1" placeholder="0" value="0">
+                      </div>
                       </div>
                     </div>
                   </div>

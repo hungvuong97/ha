@@ -1,5 +1,5 @@
 <% 
-  active = '/memory'
+  active = activeLink != null ? activeLink: 'memory'
   const sidebarItems = [
     {
       label: 'Memory',
@@ -77,7 +77,14 @@ data-v-193ff82c=""
       <li><a class="dropdown-item" href="#">Settings</a></li>
       <li><a class="dropdown-item" href="#">Profile</a></li>
       <li><hr class="dropdown-divider" /></li>
-      <li><a class="dropdown-item" href="#">Sign out</a></li>
+      <li><a class="dropdown-item" href="#" onclick="redirectToMemory()">Sign out</a></li>
     </ul>
   </div>
 </div>
+
+<script>
+  function redirectToMemory() {
+    var newUrl = '/memory';
+    window.location.href = newUrl;
+  }
+  </script>
