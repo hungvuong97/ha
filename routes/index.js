@@ -104,9 +104,28 @@ router.get('/memory/add', function (request, response, next) {
 });
 
 router.get('/memory/edit/:id', function (request, response, next) {
+  // Memory data example
+  const data = {
+    id: request.params.id,
+    title: 'Test',
+    date: '2023-01-01 12:00:00',
+    contentData: {
+      blocks: [
+        {
+          type: 'header',
+          data: {
+            text: 'Editor.js',
+            level: 2,
+          },
+        },
+      ],
+    },
+  };
+  console.log('data', data);
+
   response.render('pages/memory/edit', {
     activeLink: '/memory',
-    data: {}, // - Memory data
+    data: data, // - Memory data
   });
 });
 

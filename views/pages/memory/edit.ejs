@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -31,16 +32,23 @@
                         </div>
                       </div>
                       <div class="entity-controls">
-                        <%-include('../../components/InputFields/DatePicker', {
-                          enableTime: true,
-                          id: 'date_time',
-                          name: 'date_time',
-                        })%>
+                        <% { 
+                          const value = data?.date 
+                        %>
+                          <%- include('../../components/InputFields/DatePicker', {
+                            enableTime: true,
+                            id: 'date_time',
+                            name: 'date_time',
+                            value: value,
+                          }) %>
+                        <% } %>
                       </div>
                       <div class="entity-editor">
                         <div></div>
+                        <% var contentData = JSON.stringify(data?.contentData) %>
                         <%-include('../../components/InputFields/Editor.ejs', {
-                          editorId: 12
+                          editorId: 12,
+                          contentData: contentData,
                         }) %>
                       </div>
                     </div>
